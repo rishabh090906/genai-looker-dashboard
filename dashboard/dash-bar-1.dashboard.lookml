@@ -1,6 +1,5 @@
-
-- dashboard: dash-area-1
-  title: title-area-1
+- dashboard: dash-bar-1
+  title: title-bar-1
   layout: newspaper
   preferred_viewer: dashboards-next
   description: ''
@@ -10,10 +9,26 @@
     title:  Untitled Visualization
     model:  llm_model
     explore:  retail_orders
-    type:  looker_area
-    fields:  [retail_orders.total_profit, retail_orders.category]
-    fill_fields:  [retail_orders.category]
-    series_limit:  50
+    type:  looker_bar
+    fields:  [retail_orders.city, retail_orders.country]
+    sorts:  [retail_orders.city desc 0]
+    limit:  500
+    column_limit:  50
+    value_labels:  legend
+    label_type:  labPer
+    inner_radius:  45
+    custom_color_enabled:  true
+    show_single_value_title:  true
+    single_value_title:  Total Categories
+    show_comparison:  false
+    comparison_type:  value
+    comparison_reverse_colors:  false
+    show_comparison_label:  true
+    enable_conditional_formatting:  false
+    conditional_formatting_include_totals:  false
+    conditional_formatting_include_nulls:  false
+    hidden_pivots:  { }
+    defaults_version:  1
     x_axis_gridlines:  false
     y_axis_gridlines:  true
     show_view_names:  false
@@ -36,9 +51,10 @@
     label_density:  25
     x_axis_scale:  auto
     y_axis_combined:  true
-    ordering:  none
-    show_null_labels:  false
+    show_null_points:  true
+    interpolation:  linear
     show_totals_labels:  false
     show_silhouette:  false
     totals_color:  '#808080'
-    defaults_version:  1
+    ordering:  none
+    show_null_labels:  false
