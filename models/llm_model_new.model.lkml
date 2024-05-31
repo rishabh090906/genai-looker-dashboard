@@ -28,3 +28,5 @@ persist_with: llm_model_new_default_datagroup
 # Each joined view also needs to define a primary key.
 
 explore: retail_orders {}
+explore: production {}
+explore: manufacturer {}
